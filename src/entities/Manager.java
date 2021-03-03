@@ -4,7 +4,7 @@ import entities.interfaces.INonprogrammer_member;
 
 public class Manager extends Employee implements INonprogrammer_member {
     private int salary;
-    public Manager(int EmpId, String Name, String address, String status, String level, String Department){
+    public Manager(int EmpId, String Name, String address, String status, String level, int Department){
         super(EmpId, Name, address, status, level, Department);
     }
     public void setSalary(int money){
