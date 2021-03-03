@@ -59,7 +59,7 @@ public class Programmer extends Employee implements IProgrammer_member {
             return "He got penalty in "+getPenalty()+"$ tg for late";
 
     }
-    public void BackendInfo(){
+    public void ProgrammerInfo(){
         System.out.println(work());
         System.out.println(programs());
         System.out.println(getSalary());
