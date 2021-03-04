@@ -31,7 +31,7 @@ public class ManagerRepositories implements IManagerRepositories {
             LinkedList managers = new LinkedList();
 
             while(rs.next()) {
-                Manager manager = new Manager(rs.getInt("id"), rs.getString("name"), rs.getString("surname"), rs.getString("speciality"), rs.getString("hiredate"), rs.getInt("salary"));
+                Manager manager = new Manager(rs.getInt("id"), rs.getString("name"), rs.getString("surname"), rs.getString("speciality"), rs.getString("hiredate"), rs.getString("salary"));
                 managers.add(manager);
             }
 
@@ -66,7 +66,7 @@ public class ManagerRepositories implements IManagerRepositories {
             LinkedList managers = new LinkedList();
 
             while(rs.next()) {
-                Manager manager = new Manager(rs.getInt("id"), rs.getString("name"), rs.getString("surname"), rs.getString("status"), rs.getString("hiredate"), rs.getInt("salary"));
+                Manager manager = new Manager(rs.getInt("id"), rs.getString("name"), rs.getString("surname"), rs.getString("status"), rs.getString("level"), rs.getString("department"));
                 managers.add(manager);
             }
 

@@ -2,13 +2,13 @@ package entities;
 
 import entities.interfaces.IProgrammer_member;
 
-public class Programmer extends Employee implements IProgrammer_member {
+public class BackendDev extends Employee implements IProgrammer_member {
     public static int deadline;
     public static int Bonus;
     public static int Penalty;
     private int doTime;
     private int Salary;
-    public Programmer(int EmpId, String Name, String address, String status, String level, String Department){
+    public BackendDev(int EmpId, String Name, String address, String status, String level, String Department){
         super(EmpId, Name, address, status, level, Department);
     }
     public void setSalary(int money){

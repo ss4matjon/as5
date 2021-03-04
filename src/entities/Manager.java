@@ -4,7 +4,7 @@ import entities.interfaces.INonprogrammer_member;
 
 public class Manager extends Employee implements INonprogrammer_member {
     private int salary;
-    public Manager(int EmpId, String Name, String address, String status, String level, int Department){
+    public Manager(int EmpId, String Name, String address, String status, String level, String Department){
         super(EmpId, Name, address, status, level, Department);
     }
     public void setSalary(int money){
@@ -14,15 +14,15 @@ public class Manager extends Employee implements INonprogrammer_member {
         return salary;
     }
     public void setDoingDuration(int day){
-        Programmer.deadline=day;
+        BackendDev.deadline=day;
         FrontendDev.deadline=day;
     }
     public void setBonus(int bonus){
-        Programmer.Bonus=bonus;
+        BackendDev.Bonus=bonus;
         FrontendDev.Bonus=bonus;
     }
     public void setPenalty(int penalty){
-        Programmer.Penalty=penalty;
+        BackendDev.Penalty=penalty;
         FrontendDev.Penalty=penalty;
     }
     public String manage(){
