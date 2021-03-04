@@ -109,8 +109,8 @@ public class MyApplication {
                         break;
 
                     case 10:
+                        controllerCompany.getTotalCost();
                         break;
-
                     case 0:
                     break;
                 }
