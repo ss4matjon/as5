@@ -66,5 +66,44 @@ public class CompanyRepositories implements ICompanyRepository {
 
         return null;
     }
+
+    public int getTotalCost(){
+        Connection con = null;
+        try {
+            con = db.getConnection();
+            String sql ="SELECT SUM(salary) FROM BackEndDevelopers";
+            PreparedStatement st = con.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            int sum_backEnd = -1;
+            if(rs.next()) {
+                sum_backEnd = rs.getInt("sum");
+            }
+            sql ="SELECT SUM(salary) FROM FrontEndDevelopers";
+            st = con.prepareStatement(sql);
+            rs = st.executeQuery();
+            int sum_frontEnd = 0;
+            if(rs.next()){
+                sum_frontEnd = rs.getInt("sum");
+            }
+
+            sql ="SELECT SUM(salary) FROM manager";
+            st = con.prepareStatement(sql);
+            rs = st.executeQuery();
+            int sum_manager = 0;
+            if(rs.next()) {
+                sum_manager = rs.getInt("sum");
+            }
+            return sum_backEnd+sum_frontEnd+sum_manager;
+        } catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try {
+                con.close();
+            }catch (SQLException e){
+                e.printStackTrace();
+            }
+        }
+        return -1;
     }
+}
 

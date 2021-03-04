@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ICompanyRepository {
     public List<Employee> getAllEmployees();
+    public int getTotalCost();
 }

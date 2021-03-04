@@ -44,11 +44,12 @@ public class MyApplication {
             System.out.println("2. Get all BackEndDevelopers");
             System.out.println("3. Get all BackEndDevelopers by name(name,surname)");
             System.out.println("4. Get all BackEndDevelopers by status");
-            System.out.println("5. Get all FrontEndDevelopers by name(name,surname)");
-            System.out.println("6. Get all FrontEndDevelopers by status");
-            System.out.println("7. Get all Managers by name(name,surname)");
-            System.out.println("8. Get all Managers by status");
-            System.out.println("9. Total cost of company");
+            System.out.println("5. Get all FrontEndDevelopers");
+            System.out.println("6. Get all FrontEndDevelopers by name(name,surname)");
+            System.out.println("7. Get all FrontEndDevelopers by status");
+            System.out.println("8. Get all Managers");
+            System.out.println("9. Get all Managers by name(name,surname)");
+            System.out.println("10. Total cost of company");
 
             System.out.println("0. Exit");
             System.out.println();
@@ -57,9 +58,61 @@ public class MyApplication {
                 int option = scanner.nextInt();
                 switch (option){
                     case 1:
-
+                        repoCompany.getAllEmployees();
+                        break;
+                    case 2:
+                        repoBack.getAllBackendDevs();
                         break;
 
+                    case 3:
+                        System.out.println("Please enter the name of the Backend Developer");
+                        String Backname = scanner.nextLine();
+                        System.out.println("Please enter surname");
+                        String Backsurname = scanner.nextLine();
+                        repoBack.getBackendDevByName(Backname,Backsurname);
+                        break;
+
+                    case 4:
+                        System.out.println("Please enter status");
+                        String Backstatus = scanner.nextLine();
+                        repoBack.getBackendDevByStatus(Backstatus);
+                        break;
+
+                    case 5:
+                        repoFront.getAllFrontendDevs();
+                        break;
+
+                    case 6:
+                        System.out.println("Please enter the name of the Frontend Developer");
+                        String frontname = scanner.nextLine();
+                        System.out.println("Please enter surname");
+                        String frontsurname = scanner.nextLine();
+                        repoFront.getFrontendByName(frontname,frontsurname);
+                        break;
+
+                    case 7:
+                        System.out.println("Please enter status");
+                        String Frontstatus = scanner.nextLine();
+                        repoFront.getFrontEndByStatus(Frontstatus);
+                        break;
+
+                    case 8:
+                        repoManager.getAllManagers();
+                        break;
+
+                    case 9:
+                        System.out.println("Please enter the name of the Manager");
+                        String Managername=scanner.nextLine();
+                        System.out.println("Please enter surname");
+                        String Managersurname=scanner.nextLine();
+                        repoManager.getManagerByName(Managername,Managersurname);
+                        break;
+
+                    case 10:
+                        break;
+
+                    case 0:
+                    break;
                 }
             }
             catch (InputMismatchException e) {

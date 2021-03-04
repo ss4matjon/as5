@@ -17,4 +17,8 @@ public class CompanyController {
         List<Employee> list = repo.getAllEmployees();
         return list.toString();
     }
+    public String getTotalCost(){
+        int total = repo.getTotalCost();
+        return total != -1 ? "Total value of IT company " + total + "$" : "Failed";
+    }
 }
